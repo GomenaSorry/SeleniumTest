@@ -12,9 +12,11 @@ using SeleniumTest.Settings;
 using SeleniumTest.Configuration;
 using SeleniumTest.CustomException;
 using SeleniumTest.ComponentHelper;
+using TechTalk.SpecFlow;
 
 namespace SeleniumTest.BaseClasses
 {
+    [Binding]
     [TestClass]
     public class BaseClass
     {
@@ -44,7 +46,7 @@ namespace SeleniumTest.BaseClasses
             return driver;
         }
 
-        [AssemblyInitialize]
+        [BeforeTestRun]
         public static void InitWebDriver(TestContext tc)
         {
             ObjectRepository.Config = new AppConfigReader();
@@ -70,7 +72,7 @@ namespace SeleniumTest.BaseClasses
             BrowserHelper.BrowserMaximize();
         }
 
-        [AssemblyCleanup]
+        [AfterTestRun]
         public static void TearDown()
         {
             if (ObjectRepository.Driver != null)

@@ -12,25 +12,25 @@ namespace SeleniumTest.PageObject
     {
         #region WebElement
 
-        private By LoginPage = By.Id("htmlformtest");
+        private By HtmlFormPage = By.Id("htmlformtest");
 
         #endregion
 
         #region Actions
 
-        public bool CheckLinkLoginPage()
+        public bool CheckLinkHtmlFormPage()
         {
-            return GenericHelper.IsElementPresent(LoginPage);
+            return GenericHelper.IsElementPresent(HtmlFormPage);
         }
 
         #endregion
 
         #region Navigation
 
-        public LoginPage NavigateToLoginPage()
+        public HtmlFormPage NavigateToHtmlFormPage()
         {
-            LinkHelper.ClickLink(LoginPage);
-            return new LoginPage();
+            LinkHelper.ClickLink(HtmlFormPage);
+            return new HtmlFormPage();
         }
 
         #endregion

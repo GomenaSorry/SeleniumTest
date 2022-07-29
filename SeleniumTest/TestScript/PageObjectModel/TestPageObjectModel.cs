@@ -17,18 +17,18 @@ namespace SeleniumTest.TestScript.PageObjectModel
         {
             NavigationHelper.NavigateUrl("https://testpages.herokuapp.com/styled/index.html");
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
             loginPage.Login("MyUserName", "P@ssw0rd");
             FormProcessorPage formProcessorPage = loginPage.ClickSubmitButton();
             formProcessorPage.CheckValues();
         }
 
         [TestMethod]
-        public void LoginPageToHomePage()
+        public void HtmlFormPageToHomePage()
         {
             NavigationHelper.NavigateUrl("https://testpages.herokuapp.com/styled/index.html");
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
             loginPage.NavigateToIndexPage();
         }
 
@@ -37,7 +37,7 @@ namespace SeleniumTest.TestScript.PageObjectModel
         {
             NavigationHelper.NavigateUrl("https://testpages.herokuapp.com/styled/index.html");
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
             loginPage.Login("MyUserName", "P@ssw0rd");
             FormProcessorPage formProcessorPage = loginPage.ClickSubmitButton();
             formProcessorPage.NavigateToIndexPage();

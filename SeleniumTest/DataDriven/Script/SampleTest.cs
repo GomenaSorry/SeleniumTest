@@ -35,7 +35,7 @@ namespace SeleniumTest.DataDriven.Script
         public void DataDrivenTestCsv()
         {
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
 
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[1]/td[1]/input[1]"), TestContext.DataRow["Username"].ToString());
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[2]/td[1]/input[1]"), TestContext.DataRow["Password"].ToString());
@@ -52,7 +52,7 @@ namespace SeleniumTest.DataDriven.Script
         public void DataDrivenTestXml()
         {
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
 
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[1]/td[1]/input[1]"), TestContext.DataRow["Username"].ToString());
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[2]/td[1]/input[1]"), TestContext.DataRow["Password"].ToString());
@@ -69,7 +69,7 @@ namespace SeleniumTest.DataDriven.Script
         public void DataDrivenTestExcel()
         {
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
 
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[1]/td[1]/input[1]"), TestContext.DataRow["Username"].ToString());
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[2]/td[1]/input[1]"), TestContext.DataRow["Password"].ToString());
@@ -85,7 +85,7 @@ namespace SeleniumTest.DataDriven.Script
         public void NonDataDrivenTest()
         {
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
 
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[1]/td[1]/input[1]"), "MyUserName");
             TextBoxHelper.TypeInTextBox(By.XPath("//tbody/tr[2]/td[1]/input[1]"), "P@ssw0rd");
@@ -107,7 +107,7 @@ namespace SeleniumTest.DataDriven.Script
 
 
             HomePage homePage = new HomePage();
-            LoginPage loginPage = homePage.NavigateToLoginPage();
+            HtmlFormPage loginPage = homePage.NavigateToHtmlFormPage();
 
             TextBoxHelper.TypeInTextBox(By.XPath(userNameXpath), ExcelReaderHelper.GetCellData(filePath, sheetName, 1, 0).ToString());
             TextBoxHelper.TypeInTextBox(By.XPath(passwordXpath), ExcelReaderHelper.GetCellData(filePath, sheetName, 1, 1).ToString());

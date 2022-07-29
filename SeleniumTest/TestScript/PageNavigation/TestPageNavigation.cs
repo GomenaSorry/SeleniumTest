@@ -18,7 +18,6 @@ namespace SeleniumTest.TestScript.PageNavigation
         {
             // replaced by ComponentHelper.NavigateHelper
             //ObjectRepository.Driver.Navigate().GoToUrl(ObjectRepository.Config.GetWebsite());
-
             NavigationHelper.NavigateUrl(ObjectRepository.Config.GetWebsite());
             Console.WriteLine("Title of the webpage: {0}", WindowHelper.GetTitle());
         }

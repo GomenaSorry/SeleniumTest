@@ -36,10 +36,10 @@ namespace SeleniumTest.PageObject
             }
         }
 
-        public LoginPage ClickReturnToLoginPage()
+        public HtmlFormPage ClickReturnToLoginPage()
         {
             ButtonHelper.ClickButton(ReturnButton);
-            return new LoginPage();
+            return new HtmlFormPage();
         }
 
         #endregion
