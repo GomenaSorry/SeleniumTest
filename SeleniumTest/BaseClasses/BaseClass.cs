@@ -12,6 +12,7 @@ using SeleniumTest.Settings;
 using SeleniumTest.Configuration;
 using SeleniumTest.CustomException;
 using SeleniumTest.ComponentHelper;
+using SeleniumTest.PageObject;
 using TechTalk.SpecFlow;
 
 namespace SeleniumTest.BaseClasses
@@ -45,6 +46,7 @@ namespace SeleniumTest.BaseClasses
             IWebDriver driver = new InternetExplorerDriver();
             return driver;
         }
+
 
         [BeforeTestRun]
         public static void InitWebDriver(TestContext tc)

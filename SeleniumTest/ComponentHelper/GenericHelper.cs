@@ -68,12 +68,12 @@ namespace SeleniumTest.ComponentHelper
             WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout);
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
-            bool flag = wait.Until(waitforwebelementDelegate(locator));
+            bool flag = wait.Until(WaitForWebElementDelegate(locator));
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut());
             return flag;
         }
 
-        private static Func<IWebDriver, bool> waitforwebelementDelegate(By locator)
+        private static Func<IWebDriver, bool> WaitForWebElementDelegate(By locator)
         {
             return ((x) =>
             {
@@ -94,12 +94,12 @@ namespace SeleniumTest.ComponentHelper
             WebDriverWait wait = new WebDriverWait(ObjectRepository.Driver, timeout);
             wait.PollingInterval = TimeSpan.FromMilliseconds(500);
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(ElementNotVisibleException));
-            IWebElement element = wait.Until(waitforwebelementinpageDelegate(locator));
+            IWebElement element = wait.Until(WaitForWebElementInPageDelegate(locator));
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut());
             return element;
         }
 
-        private static Func<IWebDriver, IWebElement> waitforwebelementinpageDelegate(By locator)
+        private static Func<IWebDriver, IWebElement> WaitForWebElementInPageDelegate(By locator)
         {
             return ((x) =>
             {

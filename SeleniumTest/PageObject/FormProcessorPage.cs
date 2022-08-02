@@ -11,12 +11,27 @@ namespace SeleniumTest.PageObject
 {
     public class FormProcessorPage : BasePage
     {
-        #region WebElement
+        private readonly IWebDriver driver;
+        public FormProcessorPage(IWebDriver _driver) : base(_driver)
+        {
+            this.driver = _driver;
+        }
 
-        private By UserName = By.Id("_valueusername");
-        private By Password = By.Id("_valuepassword");
-        private By ReturnButton = By.XPath("//a[@id='back_to_form']");
-        //private By IndexPage = By.LinkText("Index");
+        #region WebElement
+        private readonly By UsernameValue = By.Id("_valueusername");
+        private readonly By PasswordValue = By.Id("_valuepassword");
+        private readonly By CommentValue = By.Id("_valuecomments");
+        private readonly By CheckboxValue1 = By.Id("_valuecheckboxes0");
+        private readonly By CheckboxValue2 = By.Id("_valuecheckboxes1");
+        private readonly By CheckboxValue3 = By.Id("_valuecheckboxes2");
+        private readonly By RadioButtonValue = By.Id("_valueradioval");
+        private readonly By DropDownvalue = By.Id("_valuedropdown");
+        private readonly By ReturnButton = By.Id("back_to_form");
+        
+        public IWebElement UsernameValueElement => driver.FindElement(UsernameValue);
+        public IWebElement PasswordValueElement => driver.FindElement(PasswordValue);
+        public IWebElement ReturnButtonElement => driver.FindElement(ReturnButton);
+
 
         #endregion
 
@@ -24,8 +39,8 @@ namespace SeleniumTest.PageObject
 
         public bool CheckValues()
         {
-            string usernameValue = GenericHelper.GetElement(UserName).Text;
-            string passwordValue = GenericHelper.GetElement(Password).Text;
+            string usernameValue = GenericHelper.GetElement(UsernameValue).Text;
+            string passwordValue = GenericHelper.GetElement(PasswordValue).Text;
             if (usernameValue.Equals("MyUserName") && passwordValue.Equals("P@ssw0rd"))
             {
                 return true;
@@ -36,21 +51,16 @@ namespace SeleniumTest.PageObject
             }
         }
 
-        public HtmlFormPage ClickReturnToLoginPage()
+        public HtmlFormPage ClickReturnToHtmlFormPage()
         {
             ButtonHelper.ClickButton(ReturnButton);
-            return new HtmlFormPage();
+            return new HtmlFormPage(driver);
         }
 
         #endregion
 
         #region Navigation
-
-        //public void NavigateToIndexPage()
-        //{
-        //    LinkHelper.ClickLink(IndexPage);
-        //}
-
+        // Index navigation inherited from BasePage
         #endregion
     }
 }
