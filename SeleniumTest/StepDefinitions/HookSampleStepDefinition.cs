@@ -43,18 +43,18 @@ namespace SeleniumTest.StepDefinitions
            // pending
         }
 
-        [AfterScenario()]
-        public void AfterScenario()
-        {
-            Console.WriteLine("Title : {0}", _scenarioContext.ScenarioInfo.Title);
-            // Console.WriteLine("Description : {0}", _scenarioContext.TestError);
-            Console.WriteLine("Tags : {0}", _scenarioContext.ScenarioInfo.Tags);
-            if (_scenarioContext.TestError != null)
-            {
-                string name = _scenarioContext.ScenarioInfo.Title + ".jpeg";
-                GenericHelper.TakeScreenShot(name);
-                Console.WriteLine(_scenarioContext.TestError.Message);
-            }
-        }
+        //[AfterScenario()]
+        //public void AfterScenario()
+        //{
+        //    Console.WriteLine("Title : {0}", _scenarioContext.ScenarioInfo.Title);
+        //    // Console.WriteLine("Description : {0}", _scenarioContext.TestError);
+        //    Console.WriteLine("Tags : {0}", _scenarioContext.ScenarioInfo.Tags);
+        //    if (_scenarioContext.TestError != null)
+        //    {
+        //        string name = _scenarioContext.ScenarioInfo.Title + ".jpeg";
+        //        GenericHelper.TakeScreenShot(name);
+        //        Console.WriteLine(_scenarioContext.TestError.Message);
+        //    }
+        //}
     }
 }

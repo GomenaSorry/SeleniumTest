@@ -3,7 +3,7 @@ using System;
 
 namespace SeleniumTest.GeneralHooks
 {
-    [Binding]
+    // [Binding]
     public sealed class HooksSample
     {
 

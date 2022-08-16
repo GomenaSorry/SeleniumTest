@@ -25,7 +25,7 @@ namespace SeleniumTest.PageObject
         private readonly By CheckboxValue2 = By.Id("_valuecheckboxes1");
         private readonly By CheckboxValue3 = By.Id("_valuecheckboxes2");
         private readonly By RadioButtonValue = By.Id("_valueradioval");
-        private readonly By DropDownvalue = By.Id("_valuedropdown");
+        private readonly By DropDownValue = By.Id("_valuedropdown");
         private readonly By ReturnButton = By.Id("back_to_form");
         
         public IWebElement UsernameValueElement => driver.FindElement(UsernameValue);

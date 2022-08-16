@@ -95,7 +95,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentHelper\PerformanceHelper.cs" />
     <Compile Include="GeneralHooks\HooksSample.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianAssetsPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianBasePage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianDashboardPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianDownloadsPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianKbaPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianLoginPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianMaintenanceServicesPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianPerformanceServicesPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianSoftwareUpdatesPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianSupportPage.cs" />
+    <Compile Include="GuardianTest\PageObject\GuardianSystemInfoPage.cs" />
     <Compile Include="StepDefinitions\ArgumentSampleStepDefinitions.cs" />
     <Compile Include="BaseClasses\BaseClass.cs" />
     <Compile Include="BaseClasses\BasePage.cs" />
@@ -121,6 +133,7 @@
     <Compile Include="ExcelReader\ExcelReaderHelper.cs" />
     <Compile Include="KeywordDriven\DataEngine.cs" />
     <Compile Include="StepDefinitions\DependencyInjectionSampleStepDefinition.cs" />
+    <Compile Include="StepDefinitions\GuardianPerformanceTestStepDefinitions.cs" />
     <Compile Include="StepDefinitions\HookSampleStepDefinition.cs" />
     <Compile Include="StepDefinitions\SeleniumTestStepDefinitions.cs" />
     <Compile Include="TestScript\ExcelReader\TestExcelData.cs" />
@@ -149,6 +162,7 @@
     <Compile Include="TestScript\TestClassContext\TestClassContext.cs" />
     <Compile Include="TestScript\KeywordDriven\TestKeywordDriven.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
+    <Compile Include="TestScript\Timing\TestTiming.cs" />
     <Compile Include="TestScript\WebDriverWait\TestWebDriverWait.cs" />
     <Compile Include="TestScript\WebElement\TestWebElement.cs" />
     <Compile Include="TestScript\PageNavigation\UnitTest1.cs" />
@@ -157,6 +171,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="FeatureFiles\ArgumentSample.feature" />
+    <None Include="FeatureFiles\GuardianPerformanceTest.feature" />
     <None Include="FeatureFiles\Hooks.feature" />
     <None Include="packages.config" />
     <None Include="FeatureFiles\SeleniumTest.feature" />
